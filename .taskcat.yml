@@ -1,5 +1,5 @@
 project:
-  name: quickstart-ibm-liberty-eks
+  name: cfn-ps-ibm-liberty-eks
   shorten_stack_name: true
   regions:
   - ca-central-1
