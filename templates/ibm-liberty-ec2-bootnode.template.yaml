@@ -125,7 +125,7 @@ Resources:
               - Effect: Allow
                 Action:
                   - ssm:GetParameter
-                Resource: 
+                Resource:
                   - !Sub arn:${AWS::Partition}:ssm:${AWS::Region}::parameter/aws/service/ami-amazon-linux-latest/amzn2-ami-hvm-x86_64-gp2
 
   GetLatestAL2AMILambda:
@@ -168,7 +168,7 @@ Resources:
           Region: !Ref AWS::Region
       Handler: index.handler
       Role: !GetAtt 'LambdaExecutionRole.Arn'
-      Runtime: python3.7
+      Runtime: python3.9
       Timeout: 900
 
   GetLatestAL2AMI:
