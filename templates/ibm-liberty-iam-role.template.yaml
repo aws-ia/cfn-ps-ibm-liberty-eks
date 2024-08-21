@@ -87,6 +87,11 @@ Resources:
                   - !Sub arn:${AWS::Partition}:eks:*:${AWS::AccountId}:fargateprofile/*/*/*
               - Effect: Allow
                 Action:
+                  - eks:DescribeAddonConfiguration
+                Resource:
+                  - !Sub arn:${AWS::Partition}:eks:*:${AWS::AccountId}:*
+              - Effect: Allow
+                Action:
                   - ssm:GetParameter
                   - ssm:GetParameters
                   - ssm:PutParameter
