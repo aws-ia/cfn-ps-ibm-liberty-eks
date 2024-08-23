@@ -153,10 +153,10 @@ Resources:
           aws s3 cp ${QSS3CodeLocation}scripts/deploy_loadbalancer.sh scripts/
           aws s3 cp ${QSS3CodeLocation}scripts/clean-wlo.sh scripts/
           aws s3 cp ${QSS3CodeLocation}scripts/destroy.sh scripts/
-          aws s3 cp ${QSS3CodeLocation}scripts/templates/catalog_source.yaml scripts/
-          aws s3 cp ${QSS3CodeLocation}scripts/templates/ibm-liberty-app-deploy-service.yaml scripts/
-          aws s3 cp ${QSS3CodeLocation}scripts/templates/ibm-liberty-app-deploy.yaml scripts/
-          aws s3 cp ${QSS3CodeLocation}scripts/templates/wlo_subscription.yaml scripts/
+          aws s3 cp ${QSS3CodeLocation}scripts/templates/catalog_source.yaml scripts/templates/
+          aws s3 cp ${QSS3CodeLocation}scripts/templates/ibm-liberty-app-deploy-service.yaml scripts/templates/
+          aws s3 cp ${QSS3CodeLocation}scripts/templates/ibm-liberty-app-deploy.yaml scripts/templates/
+          aws s3 cp ${QSS3CodeLocation}scripts/templates/wlo_subscription.yaml scripts/templates/
           aws s3 cp ${QSS3CodeLocation}scripts/deploy_application.sh scripts/
           aws s3 cp ${QSS3CodeLocation}scripts/grant_cluster_access.sh scripts/
           aws s3 cp ${QSS3CodeLocation}scripts/setup-cloudwatch-logs.sh scripts/
