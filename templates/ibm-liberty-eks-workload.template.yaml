@@ -144,7 +144,30 @@ Resources:
         commands:
         - !Sub |
           #!/bin/bash
-          aws s3 cp ${QSS3CodeLocation} . --recursive
+          mkdir -p scripts/templates
+          mkdir templates
+          aws s3 cp ${QSS3CodeLocation}scripts/install_cert_manager.sh scripts/
+          aws s3 cp ${QSS3CodeLocation}scripts/utilities.sh scripts/
+          aws s3 cp ${QSS3CodeLocation}scripts/install.sh scripts/
+          aws s3 cp ${QSS3CodeLocation}scripts/generate_stack_outputs.sh scripts/
+          aws s3 cp ${QSS3CodeLocation}scripts/deploy_loadbalancer.sh scripts/
+          aws s3 cp ${QSS3CodeLocation}scripts/clean-wlo.sh scripts/
+          aws s3 cp ${QSS3CodeLocation}scripts/destroy.sh scripts/
+          aws s3 cp ${QSS3CodeLocation}scripts/templates/catalog_source.yaml scripts/
+          aws s3 cp ${QSS3CodeLocation}scripts/templates/ibm-liberty-app-deploy-service.yaml scripts/
+          aws s3 cp ${QSS3CodeLocation}scripts/templates/ibm-liberty-app-deploy.yaml scripts/
+          aws s3 cp ${QSS3CodeLocation}scripts/templates/wlo_subscription.yaml scripts/
+          aws s3 cp ${QSS3CodeLocation}scripts/deploy_application.sh scripts/
+          aws s3 cp ${QSS3CodeLocation}scripts/grant_cluster_access.sh scripts/
+          aws s3 cp ${QSS3CodeLocation}scripts/setup-cloudwatch-logs.sh scripts/
+          aws s3 cp ${QSS3CodeLocation}scripts/get-wlo-status.sh scripts/
+          aws s3 cp ${QSS3CodeLocation}templates/ibm-liberty-new-eks-no-app.template.yaml templates/
+          aws s3 cp ${QSS3CodeLocation}templates/ibm-liberty-create-ecr.template.yaml templates/
+          aws s3 cp ${QSS3CodeLocation}templates/ibm-liberty-new-eks-with-app.template.yaml templates/
+          aws s3 cp ${QSS3CodeLocation}templates/ibm-liberty-ec2-bootnode.template.yaml templates/
+          aws s3 cp ${QSS3CodeLocation}templates/ibm-liberty-iam-role.template.yaml templates/
+          aws s3 cp ${QSS3CodeLocation}templates/ibm-liberty-create-eks.template.yaml templates/
+          aws s3 cp ${QSS3CodeLocation}templates/ibm-liberty-eks-workload.template.yaml templates/
 
           echo "APPLICATION_DEPLOY='${DeployApp}'" > scripts/ibm-liberty-parameters.properties
           echo "APPLICATION_IMAGE_URL=${AppContainerImageURL}" >> scripts/ibm-liberty-parameters.properties
